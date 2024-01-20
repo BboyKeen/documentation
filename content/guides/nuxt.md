@@ -21,9 +21,9 @@ If you need an example source code compatible avec Nuxt static generation, get [
 git clone https://github.com/fayazara/zooper myStaticApp
 ```
 
-{{< readfile file="guides/create-static.md" >}}
+{{% readmd file="guides/create-static.md" %}}
 
-## Configure environment variables
+## Environment variables
 Next, we configure the application with a medium build instance to quickly generate static files. The host instance is nano-sized, enough for a simple website. As Clever Cloud is based on standards, you only need to define a few variables:
 ```bash
 clever scale --build-flavor M
@@ -36,4 +36,4 @@ clever env set CC_PRE_BUILD_HOOK "npm install"
 clever env set CC_POST_BUILD_HOOK "npx nuxi generate"
 ```
 
-{{< readfile file="guides/git-push.md" >}}
+{{% readmd file="guides/git-push.md" %}}

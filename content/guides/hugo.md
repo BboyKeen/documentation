@@ -22,9 +22,9 @@ If you need an example source code, use [Theme mini](https://github.com/nodejh/h
 git clone https://github.com/nodejh/hugo-theme-mini myStaticApp
 ```
 
-{{< readfile file="guides/create-static.md" >}}
+{{% readmd file="guides/create-static.md" %}}
 
-## Configure environment variables and deploy script
+## Environment variables
 
 Next, configure the application with a medium build instance to quickly generate static files. The host instance is nano-sized, enough for a simple website. As Clever Cloud is based on standards, you only need to define a few variables:
 
@@ -37,6 +37,8 @@ clever env set CC_OVERRIDE_BUILDCACHE "/public"
 clever env set CC_PRE_BUILD_HOOK "bash setup_hugo.sh"
 clever env set CC_POST_BUILD_HOOK "hugo --minify --gc"
 ```
+
+## Deploy script
 
 Edit the deploy script (`setup_hugo.sh`) with this content:
 
@@ -53,7 +55,7 @@ tar xvf ${FILENAME} -C ${DEST_BIN}
 rm ${FILENAME}
 ```
 
-{{< readfile file="guides/git-push.md" >}}
+{{% readmd file="guides/git-push.md" %}}
 
 ## 404 Redirections
 
